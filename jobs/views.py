@@ -7,7 +7,8 @@ from .models import Jobs
 from .serializers import JobSerializer,JobCreateSerializer
 import logging
 from users.permissions import IsHR, IsHROrManager, IsApplicant, IsOwnerOrHR
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView\
+from .services import get_latest_jobs_qs
 
 # Create your views here.
 
@@ -86,34 +87,4 @@ class JobListView(ListAPIView):
     permission_classes = [IsAuthenticated,IsApplicant]
     serializer_class = JobSerializer
     def get_queryset(self):
-        user = self.request.user
-
-        # check if preference exists
-        if not hasattr(user, 'preference'):
-            return Jobs.objects.none()                      # no preference set → return empty
-
-        pref = user.profile
-        jobs = Jobs.objects.all()
-
-        # filter only if preference field is set
-        if pref.title:
-            jobs = jobs.filter(title__icontains=pref.title)
-
-        if pref.location:
-            jobs = jobs.filter(location__icontains=pref.location)
-
-        if pref.salary:
-            jobs = jobs.filter(salary__gte=pref.salary)
-
-        if pref.job_type:
-            jobs = jobs.filter(job_type__icontains=pref.job_type)
-        
-        if pref.experience:
-            jobs = jobs.filter(experience__icontains=pref.experience)
-
-        return jobs
-
-
-    
-    
-          
+        return get_latest_jobs_qs(user=self.request.user)
