@@ -1,0 +1,442 @@
+INFO 2026-03-21 11:15:08,834 autoreload 32252 27840 Watching for file changes with StatReloader
+INFO 2026-03-21 11:16:13,891 autoreload 32252 27840 C:\Python-Projects\job_board\job_board\urls.py changed, reloading.
+INFO 2026-03-21 11:16:15,735 autoreload 25004 29864 Watching for file changes with StatReloader
+INFO 2026-03-21 11:16:41,958 autoreload 25004 29864 C:\Python-Projects\job_board\jobs\views.py changed, reloading.
+INFO 2026-03-21 11:16:43,430 autoreload 30424 32196 Watching for file changes with StatReloader
+INFO 2026-03-21 11:17:44,476 autoreload 30424 32196 C:\Python-Projects\job_board\jobs\views.py changed, reloading.
+INFO 2026-03-21 11:17:46,088 autoreload 29564 12064 Watching for file changes with StatReloader
+INFO 2026-03-21 11:18:11,528 autoreload 29564 12064 C:\Python-Projects\job_board\jobs\urls.py changed, reloading.
+INFO 2026-03-21 11:18:13,413 autoreload 34124 22812 Watching for file changes with StatReloader
+ERROR 2026-03-21 11:18:22,190 log 34124 33224 Internal Server Error: /api/jobs/
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\mixins.py", line 17, in create
+    serializer = self.get_serializer(data=request.data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\generics.py", line 112, in get_serializer
+    serializer_class = self.get_serializer_class()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\generics.py", line 126, in get_serializer_class
+    assert self.serializer_class is not None, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'JobsViewSet' should either include a `serializer_class` attribute, or override the `get_serializer_class()` method.
+ERROR 2026-03-21 11:18:22,197 log 34124 33224 "POST /api/jobs/ HTTP/1.1" 500 103120
+INFO 2026-03-21 11:19:40,182 autoreload 34124 22812 C:\Python-Projects\job_board\jobs\views.py changed, reloading.
+INFO 2026-03-21 11:19:42,057 autoreload 32436 20352 Watching for file changes with StatReloader
+WARNING 2026-03-21 11:19:44,045 log 32436 21388 Forbidden: /api/jobs/
+WARNING 2026-03-21 11:19:44,046 log 32436 21388 "POST /api/jobs/ HTTP/1.1" 403 58
+ERROR 2026-03-21 11:20:42,195 log 32436 21388 Internal Server Error: /auth/signin/
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python-Projects\job_board\users\views.py", line 115, in post
+    refresh_token = str(tokens.refresh_token)
+                        ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'refresh_token'
+ERROR 2026-03-21 11:20:42,201 log 32436 21388 "POST /auth/signin/ HTTP/1.1" 500 95137
+INFO 2026-03-21 11:22:16,907 autoreload 32436 20352 C:\Python-Projects\job_board\users\views.py changed, reloading.
+INFO 2026-03-21 11:22:18,478 autoreload 33092 2940 Watching for file changes with StatReloader
+ERROR 2026-03-21 11:22:22,686 log 33092 24440 Internal Server Error: /auth/signin/
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python-Projects\job_board\users\views.py", line 116, in post
+    refresh_token = str(tokens.refresh_token)
+                        ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'refresh_token'
+ERROR 2026-03-21 11:22:22,693 log 33092 24440 "POST /auth/signin/ HTTP/1.1" 500 95133
+INFO 2026-03-21 11:22:59,463 autoreload 33092 2940 C:\Python-Projects\job_board\users\views.py changed, reloading.
+INFO 2026-03-21 11:23:01,032 autoreload 26764 15672 Watching for file changes with StatReloader
+INFO 2026-03-21 11:23:06,738 autoreload 26764 15672 C:\Python-Projects\job_board\users\utils.py changed, reloading.
+INFO 2026-03-21 11:23:08,237 autoreload 17300 9780 Watching for file changes with StatReloader
+ERROR 2026-03-21 11:23:12,075 log 17300 32312 Internal Server Error: /auth/signin/
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python-Projects\job_board\users\views.py", line 116, in post
+    refresh_token = str(tokens.refresh_token)
+                        ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'refresh_token'
+ERROR 2026-03-21 11:23:12,081 log 17300 32312 "POST /auth/signin/ HTTP/1.1" 500 95139
+INFO 2026-03-21 11:24:47,337 autoreload 17300 9780 C:\Python-Projects\job_board\users\views.py changed, reloading.
+INFO 2026-03-21 11:24:48,864 autoreload 35428 24156 Watching for file changes with StatReloader
+INFO 2026-03-21 11:25:01,085 autoreload 35428 24156 C:\Python-Projects\job_board\users\views.py changed, reloading.
+INFO 2026-03-21 11:25:02,642 autoreload 3212 19748 Watching for file changes with StatReloader
+ERROR 2026-03-21 11:25:17,322 log 3212 33260 Internal Server Error: /auth/signin/
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python-Projects\job_board\users\views.py", line 115, in post
+    print(tokens.refresh_token)
+          ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'refresh_token'
+ERROR 2026-03-21 11:25:17,330 log 3212 33260 "POST /auth/signin/ HTTP/1.1" 500 95108
+INFO 2026-03-21 11:25:34,307 autoreload 25836 19808 Watching for file changes with StatReloader
+ERROR 2026-03-21 11:25:53,525 log 25836 17296 Internal Server Error: /auth/signin/
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python-Projects\job_board\users\views.py", line 115, in post
+    print(tokens.refresh_token)
+          ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'refresh_token'
+ERROR 2026-03-21 11:25:53,533 log 25836 17296 "POST /auth/signin/ HTTP/1.1" 500 95108
+INFO 2026-03-21 11:26:19,892 autoreload 25836 19808 C:\Python-Projects\job_board\users\utils.py changed, reloading.
+INFO 2026-03-21 11:26:21,555 autoreload 19776 35528 Watching for file changes with StatReloader
+INFO 2026-03-21 11:26:26,147 autoreload 19776 35528 C:\Python-Projects\job_board\users\views.py changed, reloading.
+INFO 2026-03-21 11:26:27,634 autoreload 4424 14984 Watching for file changes with StatReloader
+ERROR 2026-03-21 11:26:31,512 log 4424 10352 Internal Server Error: /auth/signin/
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python-Projects\job_board\users\views.py", line 115, in post
+    print(tokens.refresh)
+          ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'refresh'
+ERROR 2026-03-21 11:26:31,517 log 4424 10352 "POST /auth/signin/ HTTP/1.1" 500 95042
+INFO 2026-03-21 11:26:43,728 autoreload 4424 14984 C:\Python-Projects\job_board\users\views.py changed, reloading.
+INFO 2026-03-21 11:26:45,536 autoreload 17972 14492 Watching for file changes with StatReloader
+ERROR 2026-03-21 11:26:56,269 log 17972 21936 Internal Server Error: /auth/signin/
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python-Projects\job_board\users\views.py", line 116, in post
+    refresh_token= str(tokens.refresh_token)
+                       ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'refresh_token'
+ERROR 2026-03-21 11:26:56,276 log 17972 21936 "POST /auth/signin/ HTTP/1.1" 500 95129
+INFO 2026-03-21 11:27:31,281 autoreload 17972 14492 C:\Python-Projects\job_board\users\views.py changed, reloading.
+INFO 2026-03-21 11:27:32,959 autoreload 3068 7816 Watching for file changes with StatReloader
+ERROR 2026-03-21 11:27:39,617 log 3068 15236 Internal Server Error: /auth/signin/
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django_redis\cache.py", line 81, in set
+    return self.client.set(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Myenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python-Projects\job_board\users\views.py", line 117, in post
+    store_refresh_token(user.id, refresh_token)
+  File "C:\Python-Projects\job_board\users\utils.py", line 20, in store_refresh_token
+    cache.set(key, refresh_token, timeout=REFRESH_TOKEN_EXPIRY)
+  File "C:\Myenv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\redis\commands\core.py", line 2305, in set
+    return self.execute_command("SET", *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\redis\client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\redis\client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\redis\utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\redis\connection.py", line 1530, in get_connection
+    connection.connect()
+  File "C:\Myenv\Lib\site-packages\redis\connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+  File "C:\Myenv\Lib\site-packages\redis\connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2026-03-21 11:27:39,630 log 3068 15236 "POST /auth/signin/ HTTP/1.1" 500 160613
+INFO 2026-03-21 11:30:29,133 views 3068 26912 User logged in: nikitasaxenainfo@gmail.com
+INFO 2026-03-21 11:30:29,166 log 3068 26912 "POST /auth/signin/ HTTP/1.1" 200 577
+WARNING 2026-03-21 11:31:21,978 log 3068 26912 Forbidden: /api/jobs/
+WARNING 2026-03-21 11:31:21,980 log 3068 26912 "POST /api/jobs/ HTTP/1.1" 403 58
+WARNING 2026-03-21 11:31:24,685 log 3068 26912 Forbidden: /api/jobs/
+WARNING 2026-03-21 11:31:24,688 log 3068 26912 "POST /api/jobs/ HTTP/1.1" 403 58
+WARNING 2026-03-21 11:33:04,392 log 3068 11912 Forbidden: /api/jobs/
+WARNING 2026-03-21 11:33:04,393 log 3068 11912 "POST /api/jobs/ HTTP/1.1" 403 58
+WARNING 2026-03-21 11:33:07,039 log 3068 11912 Forbidden: /api/jobs/
+WARNING 2026-03-21 11:33:07,041 log 3068 11912 "POST /api/jobs/ HTTP/1.1" 403 58
+INFO 2026-03-21 11:34:18,800 autoreload 3068 7816 C:\Python-Projects\job_board\job_board\settings.py changed, reloading.
+INFO 2026-03-21 11:34:21,470 autoreload 34524 5360 Watching for file changes with StatReloader
+INFO 2026-03-21 11:34:24,765 log 34524 23392 "POST /api/jobs/ HTTP/1.1" 201 267
+INFO 2026-03-21 11:36:41,940 log 34524 15820 "GET /api/jobs/ HTTP/1.1" 200 359
+INFO 2026-03-21 11:36:59,338 log 34524 15820 "GET /api/jobs/1 HTTP/1.1" 301 0
+INFO 2026-03-21 11:36:59,439 log 34524 15820 "GET /api/jobs/1/ HTTP/1.1" 200 357
+ERROR 2026-03-21 11:37:23,331 log 34524 15820 Internal Server Error: /api/jobs/1
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\middleware\common.py", line 109, in process_response
+    self.get_full_path_with_slash(request)
+  File "C:\Myenv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/api/jobs/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2026-03-21 11:37:23,337 log 34524 15820 "PUT /api/jobs/1 HTTP/1.1" 500 72365
+INFO 2026-03-21 11:37:46,431 log 34524 5240 "PUT /api/jobs/1/ HTTP/1.1" 200 267
+INFO 2026-03-21 11:38:09,363 log 34524 5240 "PUT /api/jobs/1/ HTTP/1.1" 200 267
+INFO 2026-03-21 11:38:24,739 log 34524 5240 "PATCH /api/jobs/1/ HTTP/1.1" 200 267
+WARNING 2026-03-21 11:38:52,424 log 34524 5240 Not Found: /api/my-jobs/1/
+WARNING 2026-03-21 11:38:52,425 log 34524 5240 "GET /api/my-jobs/1/ HTTP/1.1" 404 6102
+WARNING 2026-03-21 11:38:57,887 log 34524 5240 Not Found: /api/my-jobs
+WARNING 2026-03-21 11:38:57,887 log 34524 5240 "GET /api/my-jobs HTTP/1.1" 404 6093
+INFO 2026-03-21 11:39:09,817 log 34524 5240 "GET /api/jobs/my-jobs HTTP/1.1" 301 0
+INFO 2026-03-21 11:39:09,908 log 34524 5240 "GET /api/jobs/my-jobs/ HTTP/1.1" 200 359
+INFO 2026-03-21 11:39:27,542 log 34524 5240 "GET /api/jobs/search HTTP/1.1" 301 0
+INFO 2026-03-21 11:39:27,620 log 34524 5240 "GET /api/jobs/search/ HTTP/1.1" 200 359
+INFO 2026-03-21 14:43:05,296 autoreload 34524 5360 C:\Python-Projects\job_board\job_board\settings.py changed, reloading.
+INFO 2026-03-21 14:43:07,364 autoreload 23184 5664 Watching for file changes with StatReloader
+INFO 2026-03-21 14:43:21,836 autoreload 23184 5664 C:\Python-Projects\job_board\job_board\settings.py changed, reloading.
+INFO 2026-03-21 14:43:22,841 autoreload 20760 36216 Watching for file changes with StatReloader
+INFO 2026-03-21 20:35:15,633 autoreload 20760 36216 C:\Python-Projects\job_board\job_board\settings.py changed, reloading.
+INFO 2026-03-21 20:35:19,832 autoreload 32588 27196 Watching for file changes with StatReloader
+INFO 2026-03-21 23:59:42,644 autoreload 32588 27196 C:\Python-Projects\job_board\users\utils.py changed, reloading.
+INFO 2026-03-22 00:00:10,252 autoreload 31828 13748 Watching for file changes with StatReloader
+INFO 2026-03-22 00:32:27,592 autoreload 31828 13748 C:\Python-Projects\job_board\users\models.py changed, reloading.
+INFO 2026-03-22 00:32:30,636 autoreload 37008 31652 Watching for file changes with StatReloader
+INFO 2026-03-22 00:32:54,340 autoreload 37008 31652 C:\Python-Projects\job_board\users\models.py changed, reloading.
+INFO 2026-03-22 00:32:56,451 autoreload 29164 15940 Watching for file changes with StatReloader
+INFO 2026-03-22 00:33:35,583 autoreload 29164 15940 C:\Python-Projects\job_board\users\models.py changed, reloading.
+INFO 2026-03-22 00:33:37,869 autoreload 27192 11076 Watching for file changes with StatReloader
+INFO 2026-03-22 00:34:41,707 autoreload 27192 11076 C:\Python-Projects\job_board\users\models.py changed, reloading.
+INFO 2026-03-22 00:34:43,433 autoreload 20504 12112 Watching for file changes with StatReloader
+INFO 2026-03-22 00:34:50,536 autoreload 20504 12112 C:\Python-Projects\job_board\users\models.py changed, reloading.
+INFO 2026-03-22 00:34:52,443 autoreload 33500 20732 Watching for file changes with StatReloader
+INFO 2026-03-22 00:35:17,852 autoreload 33500 20732 C:\Python-Projects\job_board\users\models.py changed, reloading.
+INFO 2026-03-22 00:35:20,104 autoreload 36660 9408 Watching for file changes with StatReloader
+INFO 2026-03-22 00:36:45,657 autoreload 36660 9408 C:\Python-Projects\job_board\jobs\views.py changed, reloading.
+INFO 2026-03-22 00:36:47,843 autoreload 37132 36972 Watching for file changes with StatReloader
+INFO 2026-03-22 00:37:05,481 autoreload 37132 36972 C:\Python-Projects\job_board\jobs\views.py changed, reloading.
+INFO 2026-03-22 00:37:07,768 autoreload 28368 36012 Watching for file changes with StatReloader
+INFO 2026-03-22 00:39:12,220 autoreload 28368 36012 C:\Python-Projects\job_board\jobs\views.py changed, reloading.
+INFO 2026-03-22 00:39:14,270 autoreload 27384 37580 Watching for file changes with StatReloader
+INFO 2026-03-22 00:40:17,318 autoreload 27384 37580 C:\Python-Projects\job_board\jobs\views.py changed, reloading.
+INFO 2026-03-22 00:40:19,336 autoreload 34676 20972 Watching for file changes with StatReloader
+INFO 2026-03-22 00:41:34,487 autoreload 34676 20972 C:\Python-Projects\job_board\jobs\views.py changed, reloading.
+INFO 2026-03-22 00:41:36,600 autoreload 6068 37260 Watching for file changes with StatReloader
+INFO 2026-03-22 00:53:41,880 autoreload 6068 37260 C:\Python-Projects\job_board\users\models.py changed, reloading.
+INFO 2026-03-22 00:53:44,625 autoreload 12028 33504 Watching for file changes with StatReloader
+INFO 2026-03-23 17:01:25,489 autoreload 22620 29836 Watching for file changes with StatReloader
+ERROR 2026-03-23 17:01:39,146 log 22620 26848 Internal Server Error: /api/jobs
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\middleware\common.py", line 109, in process_response
+    self.get_full_path_with_slash(request)
+  File "C:\Myenv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/jobs/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2026-03-23 17:01:39,151 log 22620 26848 "POST /api/jobs HTTP/1.1" 500 72382
+WARNING 2026-03-23 17:01:55,399 log 22620 5360 Unauthorized: /api/jobs/
+WARNING 2026-03-23 17:01:55,400 log 22620 5360 "POST /api/jobs/ HTTP/1.1" 401 183
+ERROR 2026-03-23 17:02:52,174 log 22620 5360 Internal Server Error: /auth/token/refresh
+Traceback (most recent call last):
+  File "C:\Myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Myenv\Lib\site-packages\django\middleware\common.py", line 109, in process_response
+    self.get_full_path_with_slash(request)
+  File "C:\Myenv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/auth/token/refresh/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2026-03-23 17:02:52,177 log 22620 5360 "POST /auth/token/refresh HTTP/1.1" 500 72386
+ERROR 2026-03-23 17:03:13,439 log 22620 12444 "POST /auth/token/refresh/ HTTP/1.1" 500 161139
