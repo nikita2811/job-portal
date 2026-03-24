@@ -25,7 +25,7 @@ def get_latest_jobs_qs(user=None):
             jobs = jobs.filter(experience__icontains=pref.experience)
 
     return list(
-        jobs[:10].values(
+        jobs[:20].values(
             'id', 'title', 'company', 'location',
             'salary', 'job_type', 'created_at'
         )
