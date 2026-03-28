@@ -7,8 +7,13 @@ from .models import Jobs
 from .serializers import JobSerializer,JobCreateSerializer
 import logging
 from users.permissions import IsHR, IsHROrManager, IsApplicant, IsOwnerOrHR
-from rest_framework.generics import ListAPIView\
+from rest_framework.views import APIView
 from .services import get_latest_jobs_qs
+from rest_framework.filters import SearchFilter, OrderingFilter
+from django_filters.rest_framework import DjangoFilterBackend
+from .serializers import JobSerializer
+from .filters import JobFilter
+from rest_framework.generics import ListAPIView
 
 # Create your views here.
 
@@ -83,8 +88,38 @@ class JobsViewSet(viewsets.ModelViewSet):
 
 # Create your views here.
 
-class JobListView(ListAPIView):
+class JobListView(APIView):
     permission_classes = [IsAuthenticated,IsApplicant]
     serializer_class = JobSerializer
-    def get_queryset(self):
-        return get_latest_jobs_qs(user=self.request.user)
+    def get(self, request):
+        page      = int(request.query_params.get('page', 1))
+        page_size = int(request.query_params.get('page_size', 10))
+
+        data = get_latest_jobs_qs(
+            user=request.user,
+            page=page,
+            page_size=page_size
+        )
+        return Response(data, status=status.HTTP_200_OK)
+    
+
+# jobs/views.py
+
+
+class JobFilterView(ListAPIView):
+    permission_classes = [AllowAny]
+    serializer_class   = JobSerializer
+    queryset           = Jobs.objects.filter(is_active=True)
+
+    # backends
+    filter_backends    = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+
+    # django-filter
+    filterset_class    = JobFilter
+
+    # search across multiple fields
+    search_fields      = ['title', 'company', 'location', 'description']
+
+    # allow sorting
+    ordering_fields    = ['salary', 'created_at', 'title']
+    ordering           = ['-created_at']                    # default ordering

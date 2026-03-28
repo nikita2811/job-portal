@@ -41,8 +41,16 @@ class JobConsumer(AsyncWebsocketConsumer):
     async def receive(self, text_data):
         # handle messages from client if needed
         data = json.loads(text_data)
-        if data.get('type') == 'ping':
-            await self.send(text_data=json.dumps({'type': 'pong'}))
+        if data.get('type') == 'get_page':
+            page = data.get('page', 1)
+            await self.send_jobs_page(page=page)
+        
+    async def send_jobs_page(self, page=1):
+        result = await self.get_latest_jobs(page=page)
+        await self.send(text_data=json.dumps({
+            'type': 'jobs_page',
+            **result                                    # jobs + pagination info
+        }))
 
     # handler for new_job event broadcast
     async def new_job_posted(self, event):
@@ -52,6 +60,6 @@ class JobConsumer(AsyncWebsocketConsumer):
         }))
 
     @database_sync_to_async
-    def get_latest_jobs(self):
+    def get_latest_jobs(self,page=1):
         from .services import get_latest_jobs_qs
-        return get_latest_jobs_qs(user=self.scope['user'])
+        return get_latest_jobs_qs(user=self.scope['user'],page=page,page_size=10)

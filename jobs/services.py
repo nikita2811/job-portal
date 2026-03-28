@@ -1,7 +1,7 @@
 from .models import Jobs
 
 
-def get_latest_jobs_qs(user=None):
+def get_latest_jobs_qs(user=None,page=1, page_size=10):
     jobs = Jobs.objects.order_by('-created_at')
 
     # if user is passed and has preferences apply filters
@@ -23,10 +23,25 @@ def get_latest_jobs_qs(user=None):
         
         if pref.experience:
             jobs = jobs.filter(experience__icontains=pref.experience)
+        total       = jobs.count()
+        total_pages = (total + page_size - 1) // page_size   # ceil division
+        start       = (page - 1) * page_size
+        end         = start + page_size
 
-    return list(
-        jobs[:20].values(
-            'id', 'title', 'company', 'location',
-            'salary', 'job_type', 'created_at'
-        )
-    )
+    
+    return {
+        'jobs': list(
+            jobs[start:end].values(
+                'id', 'title', 'company', 'location',
+                'salary', 'job_type', 'created_at'
+            )
+        ),
+      'pagination': {
+            'total':       total,
+            'page':        page,
+            'page_size':   page_size,
+            'total_pages': total_pages,
+            'has_next':    page < total_pages,
+            'has_prev':    page > 1,
+        }
+    }
