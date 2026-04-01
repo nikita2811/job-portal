@@ -9,3 +9,6 @@ elasticsearch==8.0.0
 django-filter
 channels 
 channels-redis
+pdfplumber
+python-docx
+spacy

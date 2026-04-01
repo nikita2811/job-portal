@@ -109,7 +109,7 @@ class JobListView(APIView):
 class JobFilterView(ListAPIView):
     permission_classes = [AllowAny]
     serializer_class   = JobSerializer
-    queryset           = Jobs.objects.filter(is_active=True)
+    queryset           = Jobs.objects.filter()
 
     # backends
     filter_backends    = [DjangoFilterBackend, SearchFilter, OrderingFilter]
