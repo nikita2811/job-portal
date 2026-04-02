@@ -12,3 +12,6 @@ channels-redis
 pdfplumber
 python-docx
 spacy
+celery
+django-celery-results
+django-celery-beat

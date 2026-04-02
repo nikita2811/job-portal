@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 from users.permissions import IsApplicant, IsHR, IsHROrManager
 from .models import Application
 from .serializers import ApplicationSerializer
-
+from .tasks import send_application_email
 class ApplicationViewSet(viewsets.ModelViewSet):
     serializer_class = ApplicationSerializer
 
@@ -25,7 +25,9 @@ class ApplicationViewSet(viewsets.ModelViewSet):
         return Application.objects.all().order_by('-match_score') # HR sees ranked list
 
     def perform_create(self, serializer):
-        serializer.save(applicant=self.request.user)
+        data = serializer.save(applicant=self.request.user)
+        send_application_email.delay(data)
+        
 
     @action(detail=True, methods=['get'], url_path='parsed-data')
     def parsed_data(self):

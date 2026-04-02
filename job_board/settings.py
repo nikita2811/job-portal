@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'django_filters',
     'channels',
     'applications',
+    'django_celery_results',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -112,6 +114,21 @@ REST_FRAMEWORK = {
         'rest_framework.filters.OrderingFilter',
     ]
 }
+# Broker & Backend
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'job_board'          # stores results in DB
+CELERY_CACHE_BACKEND = 'django-cache'
+
+# Serialization
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+# Timezone
+CELERY_TIMEZONE = 'UTC'
+
+# Optional: task time limits
+CELERY_TASK_SOFT_TIME_LIMIT = 60   # seconds
+CELERY_TASK_TIME_LIMIT = 120
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
